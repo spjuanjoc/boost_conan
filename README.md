@@ -12,7 +12,8 @@ Use `Boost 1.69` in a CMake project with Conan as package manager.
 Use Conan to include `Boost.PropertyTree` library into a project, with
 Boost version 1.69.  
 Overload the operator `ptree()` to serialize data to a JSON.  
-property_tree is a boost header-only library, does not require linkage.
+property_tree is a boost header-only library, does not require linkage.  
+Using `gcc-7` and `c++17`.
 
 ## Install, compile, and run
 
@@ -21,7 +22,7 @@ Install the third-party libraries using conan, then configure, build, and run:
 mkdir "build"
 cd build
 conan install ../conanfile.txt
-cmake -G"Unix Makefiles" -DCMAKE_MODULE_PATH=$PWD ../CMakeLists.txt
+cmake -G"Unix Makefiles" -DCMAKE_MODULE_PATH=$PWD ..
 cmake --build . 
 ./boost_conan
 ```
@@ -33,7 +34,7 @@ Run all the tests:
 mkdir "build"
 cd build
 conan install ../conanfile.txt
-cmake -G"Unix Makefiles" -DCMAKE_MODULE_PATH=$PWD -DENABLE_TESTS=True ../CMakeLists.txt
+cmake -G"Unix Makefiles" -DCMAKE_MODULE_PATH=$PWD -DENABLE_TESTS=True ..
 cmake --build . 
 ctest .
 ```
