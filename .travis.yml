@@ -11,15 +11,19 @@ install:
   # Automatic detection of arch, compiler, etc.
   - conan user
 
-script:
+before_script:
   # Out-of-source build
   - mkdir "build"
   - cd build
   # Install third-party libraries
   - conan install ../conanfile.txt
+
+script:
   # Configure the build system with tests enabled
   - cmake -G"Unix Makefiles" -DCMAKE_MODULE_PATH=$PWD -DENABLE_TESTS=True ..
   # Build
   - cmake --build .
+
+after_success:
   # Run all the tests
   - ctest .
