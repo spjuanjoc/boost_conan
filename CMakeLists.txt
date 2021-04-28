@@ -17,6 +17,7 @@ set(PROJECT_OPTIONS
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_BINARY_DIR})
 message(STATUS "CMAKE_MODULE_PATH: ${CMAKE_MODULE_PATH}")
 find_package(fmt REQUIRED)
+find_package(Boost REQUIRED)
 #find_package(Boost COMPONENTS regex REQUIRED)
 
 target_link_libraries(${PROJECT_NAME} pthread fmt::fmt)
