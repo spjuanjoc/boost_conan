@@ -13,17 +13,18 @@ set(PROJECT_OPTIONS
     -Werror
     )
 
-#set(CMAKE_PREFIX_PATH ${CMAKE_BINARY_DIR} ${CMAKE_PREFIX_PATH})
+#set(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} ${CMAKE_BINARY_DIR})
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_BINARY_DIR})
 message(STATUS "CMAKE_MODULE_PATH: ${CMAKE_MODULE_PATH}")
 find_package(fmt REQUIRED)
 find_package(Boost REQUIRED)
 #find_package(Boost COMPONENTS regex REQUIRED)
+message("Boost dirs: ${Boost_INCLUDE_DIRS}")
 
 target_link_libraries(${PROJECT_NAME} pthread fmt::fmt)
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
 target_compile_options(${PROJECT_NAME} INTERFACE ${PROJECT_OPTIONS})
-target_include_directories(${PROJECT_NAME} PRIVATE include)
+target_include_directories(${PROJECT_NAME} PRIVATE include ${Boost_INCLUDE_DIRS})
 
 if (ENABLE_TESTS)
   message(STATUS "Tests enabled")

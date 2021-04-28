@@ -14,4 +14,8 @@ add_test(${TEST_NAME} ${TEST_NAME})
 target_link_libraries(${TEST_NAME} pthread fmt::fmt)
 target_compile_features(${TEST_NAME} PUBLIC cxx_std_17)
 target_compile_options(${TEST_NAME} INTERFACE ${PROJECT_OPTIONS})
-target_include_directories(${TEST_NAME} PRIVATE ${Catch2_INCLUDE_DIRS} ../include)
+target_include_directories(${TEST_NAME} PRIVATE
+    ../include
+    ${Catch2_INCLUDE_DIRS}
+    ${Boost_INCLUDE_DIRS}
+    )
