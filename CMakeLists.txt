@@ -15,7 +15,7 @@ set(PROJECT_OPTIONS
 
 #set(CMAKE_PREFIX_PATH ${CMAKE_BINARY_DIR} ${CMAKE_PREFIX_PATH})
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_BINARY_DIR})
-#message("CMAKE_MODULE_PATH: ${CMAKE_MODULE_PATH}")
+message(STATUS "CMAKE_MODULE_PATH: ${CMAKE_MODULE_PATH}")
 find_package(fmt REQUIRED)
 #find_package(Boost COMPONENTS regex REQUIRED)
 
@@ -25,7 +25,7 @@ target_compile_options(${PROJECT_NAME} INTERFACE ${PROJECT_OPTIONS})
 target_include_directories(${PROJECT_NAME} PRIVATE include)
 
 if (ENABLE_TESTS)
-  message(STATUS, "Tests enabled")
+  message(STATUS "Tests enabled")
   enable_testing() # Must be placed before add_subdirectory
   add_subdirectory(test)
 endif ()
