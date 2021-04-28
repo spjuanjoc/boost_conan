@@ -2,7 +2,7 @@
 
 |CI|Status|
 |---|---|
-|Travis|[![Build Status](https://travis-ci.org/spjuanjoc/boost_ptree_conan_cpp.svg?branch=master)](https://travis-ci.org/spjuanjoc/boost_ptree_conan_cpp) |
+|Travis| [![Build Status](https://www.travis-ci.com/spjuanjoc/boost_conan.svg?branch=main)](https://www.travis-ci.com/spjuanjoc/boost_conan) |
 
 ---
 Use `Boost 1.69` in a CMake project with Conan as package manager.
